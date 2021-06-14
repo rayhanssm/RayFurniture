@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Product</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -38,6 +38,15 @@
                   <label for="exampleInputPassword1" class="form-label">Price</label>
                   <input name="price" class="form-control" type="number">
                 </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Crafter</label>
+                    <select name="crafter_id" class="form-control">
+                        @foreach($crafters as $crafter)
+                            <option value="{{$crafter->id}}">{{$crafter->name}}</option>
+                        @endforeach
+                    </select>
+                </div>
+
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>

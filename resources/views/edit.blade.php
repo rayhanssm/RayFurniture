@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Product</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -36,8 +36,8 @@
                     <input name="material" class="form-control" value="{{$product->material}}">
                 </div>
                 <div class="mb-3">
-                  <label for="exampleInputPassword1" class="form-label">Price</label>
-                  <input name="price" class="form-control" type="number" value="{{$product->price}}">
+                    <label for="exampleInputPassword1" class="form-label">Price</label>
+                    <input name="price" class="form-control" type="number" value="{{$product->price}}">
                 </div>
                 <button type="submit" class="btn btn-primary">Update</button>
             </form>

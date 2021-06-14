@@ -14,25 +14,21 @@
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Name</th>
-                <th scope="col">Color</th>
-                <th scope="col">Material</th>
-                <th scope="col">Price</th>
-                <th scope="col">Crafter Name</th>
+                <th scope="col">Address</th>
                 <th scope="col">Actions</th>
             </tr>
         </thead>
         <tbody>
-            @foreach($products as $product)
+            @foreach($crafters as $crafter)
             <tr>
-                <th scope="row">{{$product->id}}</th>
-                <td>{{$product->name}}</td>
-                <td>{{$product->color}}</td>
-                <td>{{$product->material}}</td>
-                <td>{{$product->price}}</td>
-                <td>{{$product->crafter->name}}</td>
+                <th scope="row">{{$crafter->id}}</th>
                 <td>
-                    <a href="{{route('product.edit', $product->id)}}" class="btn btn-success">Edit</a>
-                    <form action="{{route('product.delete', $product->id)}}" method="post">
+                    <a href="{{route('crafter.detail', $crafter->id)}}">{{$crafter->name}}</a>
+                </td>
+                <td>{{$crafter->address}}</td>
+                <td>
+                    <a href="{{route('crafter.edit', $crafter->id)}}" class="btn btn-success">Edit</a>
+                    <form action="{{route('crafter.delete', $crafter->id)}}" method="post">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Delete</button>

@@ -4,16 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Crafter;
 
 class ProductController extends Controller
 {
     public function index(){
-        return view('create');
+        $crafters = Crafter::all();
+        return view('create', compact('crafters'));
     }
 
     public function store(Request $request){
         Product::create([
             'name' => $request->name,
+            'crafter_id'=> $request->crafter_id,
             'color' => $request->color,
             'material' => $request->material,
             'price' => $request->price

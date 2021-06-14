@@ -9,5 +9,9 @@ class Product extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'color', 'material', 'price'];
+    protected $fillable = ['name', 'crafter_id', 'color', 'material', 'price'];
+
+    public function crafter(){
+        return $this->belongsTo(Crafter::class);
+    }
 }
